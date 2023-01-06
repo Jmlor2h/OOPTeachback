@@ -53,4 +53,5 @@ class Vehicle {
 
  Abstraction is a useful technique for creating a common interface for related classes and hiding implementation details.
  By defining abstract methods in a base class, you can ensure that all concrete subclasses provide a consistent set of behavior.
+ ss
   */

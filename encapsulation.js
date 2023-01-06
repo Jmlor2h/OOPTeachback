@@ -57,4 +57,5 @@ console.log(account.getBalance()); // Output: 1300
 /*
 Encapsulation is a useful technique for organizing code and protecting data within an object.
  By bundling related data and methods together, you can create reusable and modular units of code that are easy to understand and maintain.
+ ss
 */
