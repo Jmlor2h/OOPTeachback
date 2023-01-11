@@ -12,8 +12,8 @@ abstract class Vehicle {
         this.color = color;
     }
 
-    abstract drive(): void;
-    abstract stop(): void;
+    abstract drive(): void; // abstraction
+    abstract stop(): void; // abstraction
 }
 
 class Car extends Vehicle {
@@ -49,10 +49,9 @@ bicycle.drive();
 bicycle.stop();
 
 /*
-the Vehicle class is like a blueprint that defines what all vehicles have in common, 
-such as having wheels and a color, but it doesn't define how many wheels or what color they are. 
-The Car and Bike classes use this blueprint and fill in the specific details, like number of wheels, and their own unique characteristics.
-And also both classes implements their own methods drive() and stop() but both of them perform the same behavior. 
-This makes it easy to understand and work with the code because it separates what all 
-vehicles have in common from how specific types of vehicles are different from each other.
+these classes inherit the common features from the parent class and also implement the abstract methods in their own way. 
+This abstraction allows for the separation of implementation and interface, 
+the user of the class can work with the base class and its subclasses without needing to know the specific implementation details, 
+and this is the main advantage of abstraction, the user only need to know the relevant details and the interface of the class, 
+and not the implementation details.
 */

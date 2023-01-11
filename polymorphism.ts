@@ -9,7 +9,7 @@ class Animal {
         this.name = name;
     }
     makeSound(): string {
-        return "Some Generic Sound";
+        return "Some Sound";
     }
 }
 
@@ -30,3 +30,9 @@ console.log(Doggy.makeSound()); // "Woof"
 
 let Kitty = new petCat("Kitty");
 console.log(Kitty.makeSound()); // "Meow"
+
+// The Animal class has a makeSound method that returns a generic sound.
+// The petDog and petCat classes both inherit from the Animal class and have their own implementation of the 
+// makeSound method which overrides the one in the parent class. 
+//  This allows for objects of the petDog and petCat classes to have a unique behavior when the makeSound method is called on them,
+//   while still maintaining a common interface with the parent Animal class.
