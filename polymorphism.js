@@ -1,42 +1,48 @@
-/*
-Polymorphism is the principle of allowing a subclass to override or extend the behavior of a method inherited from the superclass.
-*/
-
-// Declare a superclass
-class Vehicle {
-    // Declare a method to describe the vehicle
-    describe() {
-      console.log(`This is a vehicle`);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Animal = /** @class */ (function () {
+    function Animal(name) {
+        this.name = name;
     }
-  }
-  
-  // Extend the Vehicle class to create a subclass for cars
-  class Car extends Vehicle {
-    // Override the describe method to provide a more specific description
-    describe() {
-      console.log(`This is a car`);
+    Animal.prototype.makeSound = function () {
+        return "Some Generic Sound";
+    };
+    return Animal;
+}());
+var petDog = /** @class */ (function (_super) {
+    __extends(petDog, _super);
+    function petDog() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-  }
-  
-  // Create a new Vehicle object
-  const vehicle = new Vehicle();
-  
-  // Call the describe method on the Vehicle object
-  vehicle.describe(); // Output: 'This is a vehicle'
-  
-  // Create a new Car object
-  const car = new Car();
-  
-  // Call the describe method on the Car object
-  car.describe(); // Output: 'This is a car'
-  
-
-  /*
-  In this example, the Vehicle class has a describe() method that provides a general description of a vehicle.
-  The Car class is a subclass of Vehicle that overrides the describe() method to provide a more specific description of a car.
-  This is an example of polymorphism, because the behavior of the describe() method 
-  is different depending on the type of object it is called on.
-  Polymorphism is a useful technique for modifying the behavior of a method in a subclass to suit the specific needs of that subclass. 
-  By overriding methods in a subclass, you can create a flexible and modular inheritance hierarchy.
-  sss
-  */
+    petDog.prototype.makeSound = function () {
+        return "Woof";
+    };
+    return petDog;
+}(Animal));
+var petCat = /** @class */ (function (_super) {
+    __extends(petCat, _super);
+    function petCat() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    petCat.prototype.makeSound = function () {
+        return "Meow";
+    };
+    return petCat;
+}(Animal));
+var Doggy = new petDog("Doggy");
+console.log(Doggy.makeSound()); // "Woof"
+var Kitty = new petCat("Kitty");
+console.log(Kitty.makeSound()); // "Meow"
