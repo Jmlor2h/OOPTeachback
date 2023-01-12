@@ -14,6 +14,9 @@ abstract class Vehicle {
 
     abstract drive(): void; // abstraction
     abstract stop(): void; // abstraction
+    // it is hiding the specific details of how these behaviors are carried out for different types of vehicles.
+    // Instead, it only exposes the relevant information that the user of the class needs to know, 
+    // which is that all types of vehicles should have the ability to drive and stop.
 }
 
 class Car extends Vehicle {
